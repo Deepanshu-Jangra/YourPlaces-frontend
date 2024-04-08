@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 import { AuthContext } from "../../context/auth-context";
 import "./NavLinks.css";
@@ -10,6 +11,7 @@ const NavLinks = () => {
 
   const logoutHander = () => {
     auth.logout();
+    toast.success("Logout Successfully!");
     navigate("/auth");
   };
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import toast from "react-hot-toast";
 
 import {
   VALIDATOR_REQUIRE,
@@ -81,6 +82,7 @@ const UpdatePlace = () => {
           Authorization: "Bearer " + auth.token,
         }
       );
+      toast.success("Updated place successfully!");
       navigate(`/${auth.userId}/places`);
     } catch (err) {}
   };

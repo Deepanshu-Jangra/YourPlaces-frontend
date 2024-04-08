@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 import {
   VALIDATOR_EMAIL,
@@ -87,6 +88,7 @@ const Auth = () => {
         );
 
         auth.login(responseData.userId, responseData.token);
+        toast.success("Login Successfully!");
         navigate("/");
       } catch (err) {}
     } else {
@@ -104,6 +106,7 @@ const Auth = () => {
         );
 
         auth.login(responseData.userId, responseData.token);
+        toast.success("Signup Successfully!");
         navigate("/");
       } catch (err) {}
     }

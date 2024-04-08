@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 import {
   VALIDATOR_REQUIRE,
@@ -58,6 +59,7 @@ const NewPlace = () => {
           Authorization: "Bearer " + auth.token,
         }
       );
+      toast.success("Place added successfully!");
       navigate(`/${auth.userId}/places`);
     } catch (err) {}
   };

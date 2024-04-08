@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import toast from "react-hot-toast";
 
 import Card from "../../shared/components/UIElements/Card";
 import Button from "../../shared/components/FormElements/Button";
@@ -35,6 +36,7 @@ const PlaceItem = (props) => {
         }
       );
       props.onDelete(props.id);
+      toast.success("Deleted place successfully!");
     } catch (err) {}
   };
 

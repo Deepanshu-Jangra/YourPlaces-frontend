@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
 // import Users from "./user/pages/Users";
 // import UserPlaces from "./places/pages/UserPlaces";
@@ -52,6 +53,7 @@ function App() {
         }
       >
         <RouterProvider router={router} />
+        <Toaster />
       </Suspense>
     </AuthContext.Provider>
   );
