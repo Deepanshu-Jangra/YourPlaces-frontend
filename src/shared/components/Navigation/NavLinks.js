@@ -6,8 +6,8 @@ import { AuthContext } from "../../context/auth-context";
 import "./NavLinks.css";
 
 const NavLinks = () => {
-  const navigate = useNavigate();
   const auth = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const logoutHander = () => {
     auth.logout();
