@@ -1,22 +1,14 @@
-import React, { Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 
-// import Users from "./user/pages/Users";
-// import UserPlaces from "./places/pages/UserPlaces";
-// import NewPlace from "./places/pages/NewPlace";
-// import UpdatePlace from "./places/pages/UpdatePlace";
-// import Auth from "./user/pages/Auth";
+import Users from "./user/pages/Users";
+import UserPlaces from "./places/pages/UserPlaces";
+import NewPlace from "./places/pages/NewPlace";
+import UpdatePlace from "./places/pages/UpdatePlace";
+import Auth from "./user/pages/Auth";
 import RootLayout from "./shared/components/Layouts/RootLayout";
 import { AuthContext } from "./shared/context/auth-context";
 import { useAuth } from "./shared/hooks/auth-hook";
-import LoadingSpinner from "./shared/components/UIElements/LoadingSpinner";
-
-const Users = React.lazy(() => import("./user/pages/Users"));
-const UserPlaces = React.lazy(() => import("./places/pages/UserPlaces"));
-const NewPlace = React.lazy(() => import("./places/pages/NewPlace"));
-const UpdatePlace = React.lazy(() => import("./places/pages/UpdatePlace"));
-const Auth = React.lazy(() => import("./user/pages/Auth"));
 
 function App() {
   const { userId, token, login, logout } = useAuth();
@@ -45,16 +37,8 @@ function App() {
         logout: logout,
       }}
     >
-      <Suspense
-        fallback={
-          <div className="center">
-            <LoadingSpinner />
-          </div>
-        }
-      >
-        <RouterProvider router={router} />
-        <Toaster />
-      </Suspense>
+      <RouterProvider router={router} />
+      <Toaster />
     </AuthContext.Provider>
   );
 }
