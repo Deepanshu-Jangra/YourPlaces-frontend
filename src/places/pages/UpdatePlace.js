@@ -82,7 +82,7 @@ const UpdatePlace = () => {
           Authorization: "Bearer " + auth.token,
         }
       );
-      toast.success("Updated place successfully!");
+      toast.success("Place updated successfully!");
       navigate(`/${auth.userId}/places`);
     } catch (err) {}
   };

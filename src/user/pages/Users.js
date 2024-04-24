@@ -38,7 +38,7 @@ const Users = () => {
         <Card>
           <h2>No users found.</h2>
           <h3>
-            <Link to="/auth" style={{ color: "#ff0055" }}>
+            <Link to="/auth?mode=signup" style={{ color: "#ff0055" }}>
               Create new user
             </Link>
           </h3>

@@ -11,8 +11,8 @@ const NavLinks = () => {
 
   const logoutHander = () => {
     auth.logout();
-    toast.success("Logout Successfully!");
-    navigate("/auth");
+    toast.success("Logout Successful!");
+    navigate("/auth?mode=login");
   };
 
   return (
@@ -32,7 +32,7 @@ const NavLinks = () => {
       )}
       {!auth.isLoggedIn && (
         <li>
-          <NavLink to="/auth">SIGN IN</NavLink>
+          <NavLink to="/auth?mode=login">SIGN IN</NavLink>
         </li>
       )}
       {auth.isLoggedIn && (

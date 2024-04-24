@@ -36,7 +36,7 @@ const PlaceItem = (props) => {
         }
       );
       props.onDelete(props.id);
-      toast.success("Deleted place successfully!");
+      toast.success("Place deleted successfully!");
     } catch (err) {}
   };
 
